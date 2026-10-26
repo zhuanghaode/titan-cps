@@ -1,0 +1,21 @@
+{
+  "key.titancps.toggle": "Arm Titan CPS (hold attack to click)",
+  "key.titancps.config": "Open Titan CPS Settings",
+  "category.titancps": "Titan CPS",
+  "gui.titancps.title": "Titan CPS Settings",
+  "gui.titancps.clicksPerTick": "Clicks per tick",
+  "gui.titancps.bypassCooldown": "Bypass cooldown",
+  "gui.titancps.lockCharge": "Lock full charge",
+  "gui.titancps.respectInvulnerability": "Skip invulnerable targets",
+  "gui.titancps.entityOnly": "Attack entities only",
+  "gui.titancps.runWithGuiOpen": "Keep running with GUI open",
+  "gui.titancps.stopWhenEmptyHand": "Stop when hand is empty",
+  "gui.titancps.on": "ON",
+  "gui.titancps.off": "OFF",
+  "gui.titancps.warn": "Warning: above the advisory threshold of %s clicks/tick",
+  "gui.titancps.alwaysOn": "Always click (ignore attack button)",
+  "gui.titancps.hint": "Armed: hold the attack button to autoclick",
+  "titancps.status.armed": "ARMED - hold attack",
+  "titancps.status.always": "ON - always clicking",
+  "titancps.status.disarmed": "DISARMED"
+}

@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        maven { url = "https://neoforged.forgecdn.net/releases" }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        maven { url = "https://neoforged.forgecdn.net/releases" }
+        mavenCentral()
+        maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
+    }
+}
+
+rootProject.name = "titan-cps"
+
+// ModDevGradle hardcodes https://maven.neoforged.net/* in RepositoriesPlugin.
+// maven.neoforged.net is DNS-poisoned in mainland China, so rewrite every
+// NeoForged repository URL to the official ForgeCDN mirror.
+def rewriteNeoForged = { repos ->
+    repos.withType(org.gradle.api.artifacts.repositories.MavenArtifactRepository).configureEach { r ->
+        def u = r.url.toString()
+        if (u.contains("maven.neoforged.net")) {
+            r.url = u.replace("https://maven.neoforged.net/", "https://neoforged.forgecdn.net/")
+        }
+    }
+}
+gradle.allprojects { p -> p.repositories.whenObjectAdded { rewriteNeoForged(p.repositories) } }

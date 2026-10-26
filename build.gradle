@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.moddev' version '2.0.107'
+}
+
+group = mod_group
+version = mod_version
+base { archivesName = mod_id }
+
+neoForge {
+    version = neoForge_version
+
+    runs {
+        client {
+            client()
+            programArguments.addAll '-username', 'DevUser'
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+tasks.named('processResources', ProcessResources) {
+    def props = [
+        minecraft_version: minecraft_version,
+        neoforge_version : neoForge_version,
+        mod_id           : mod_id,
+        mod_name         : mod_name,
+        mod_version      : mod_version,
+        mod_group        : mod_group,
+        mod_description  : mod_description,
+    ]
+    inputs.properties(props)
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand(props)
+    }
+}

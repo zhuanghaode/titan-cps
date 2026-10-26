@@ -1,0 +1,21 @@
+{
+  "key.titancps.toggle": "启用泰坦连点（按住左键才连点）",
+  "key.titancps.config": "打开泰坦连点器设置",
+  "category.titancps": "Titan CPS",
+  "gui.titancps.title": "Titan CPS 设置",
+  "gui.titancps.clicksPerTick": "每 tick 点击次数",
+  "gui.titancps.bypassCooldown": "绕过冷却",
+  "gui.titancps.lockCharge": "锁定满蓄力",
+  "gui.titancps.respectInvulnerability": "跳过无敌帧目标",
+  "gui.titancps.entityOnly": "只攻击实体",
+  "gui.titancps.runWithGuiOpen": "打开界面时继续运行",
+  "gui.titancps.stopWhenEmptyHand": "空手时停止",
+  "gui.titancps.on": "开",
+  "gui.titancps.off": "关",
+  "gui.titancps.warn": "警告：已超过建议阈值 %s 次/tick",
+  "gui.titancps.alwaysOn": "始终连点（忽略左键）",
+  "gui.titancps.hint": "已启用：按住左键开始连点",
+  "titancps.status.armed": "已启用 - 按住左键",
+  "titancps.status.always": "已启用 - 始终连点",
+  "titancps.status.disarmed": "未启用"
+}
